@@ -1,4 +1,7 @@
-# Dotfiles ![repo-size] [![Powered by dotbot][db-shield]][db-link]
+# Dotfiles
+
+![repo-size]
+[![Powered by dotbot][db-shield]][db-link]
 
 [db-link]: https://github.com/anishathalye/dotbot
 [db-shield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat&color=32a852&labelColor=1d212a
