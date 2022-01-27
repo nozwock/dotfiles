@@ -1,0 +1,13 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ['~']
+
+- link:
+    ~/.vimrc: vim/.vimrc
+    ~/.vim/autoload: vim/.vim/autoload
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
