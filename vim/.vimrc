@@ -26,6 +26,8 @@ set autoread
 set ts=4 sw=4 " render tab with 4 width
 set expandtab
 
+set background=dark " fix black lines at eof due to color scheme mismatch bw terminal and vim
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
