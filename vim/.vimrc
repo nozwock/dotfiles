@@ -23,6 +23,8 @@ set showcmd " Show me what I'm typing
 set noshowmode " removes --INSERT--
 set laststatus=2 " Status bar
 set autoread
+set ts=4 sw=4 " render tab with 4 width
+set expandtab
 
 " Searching
 nnoremap / /\v
