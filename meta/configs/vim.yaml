@@ -1,0 +1,3 @@
+- link:
+    ~/.vimrc: vim/.vimrc
+    ~/.vim/autoload: vim/.vim/autoload
