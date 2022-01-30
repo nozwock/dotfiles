@@ -1,13 +1,20 @@
+# If linking directories, do not include a trailing slash.
+
+- clean: ['~', '.config/']
+
 - defaults:
     link:
       relink: true
       create: true
 
-- clean: ['~']
-
 - link:
+    #vim
     ~/.vimrc: vim/.vimrc
     ~/.vim/autoload: vim/.vim/autoload
+    #bash
+    ~/.bashrc: bash/.bashrc
+    ~/.bash_aliases: bash/.bash_aliases
+    ~/.bash_profile: bash/.bash_profile
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
