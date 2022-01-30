@@ -11,10 +11,24 @@
 
 *Prerequisites: python, git*
 
-### Installation
-
 ```sh
 git clone https://github.com/nozwock/dotfiles.git .dotfiles --recursive
 cd .dotfiles
-./install
 ```
+
+### For installing a predefined profile:
+
+```bash
+./install-profile <profile> [<configs...>]
+```
+See [meta/profiles/](./meta/profiles) for available profiles
+
+### For installing single configurations:
+
+```bash
+./install-standalone <configs...>
+```
+See [meta/configs/](./meta/configs) for available configurations
+
+_*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.
+*DO NOT* run the script as a sudoer.
