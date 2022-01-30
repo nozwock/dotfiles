@@ -1,3 +1,4 @@
+
 " syncine vim-plug
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -17,6 +18,8 @@ Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
 
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 set number " Show line numbers
 set backspace=indent,eol,start " Makes backspace key more powerful
 set showcmd " Show me what I'm typing
@@ -26,8 +29,7 @@ set autoread
 set ts=4 sw=4 " render tab with 4 width
 set expandtab
 
-" set background=dark " fix black lines at eof due to color scheme mismatch bw terminal and vim
-set t_ut=""
+set mouse+=a
 
 " Searching
 nnoremap / /\v
@@ -54,13 +56,17 @@ set list " To enable by default
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
 
-" ##############
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
 set termguicolors
 
 " Color scheme (terminal)
+set t_ut="" " fix black lines at eof due to color scheme mismatch bw terminal and vim
 set t_Co=256
 set background=dark
 colorscheme ayu
+
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 let g:rainbow_active = 0
 
@@ -81,3 +87,4 @@ endfunction
 function! LightlineFiletype()
   return winwidth(0) > 70 ? (&filetype !=# '' ? &filetype : 'no ft') : ''
 endfunction
+

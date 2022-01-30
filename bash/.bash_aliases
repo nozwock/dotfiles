@@ -18,6 +18,7 @@ alias lcr='exa -lhFT --color=always --icons --sort=size --group-directories-firs
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # programs
 alias b='bat'
+alias tmux='tmux -u' # i don know...emojis & some chars don't render otherwise
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # confirm before removing something
 alias rm='rm -iv'
