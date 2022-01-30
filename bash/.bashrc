@@ -44,7 +44,6 @@ bind '"\e[B":history-search-forward'
 
 . "$HOME/.cargo/env"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 eval "$(starship init bash)"
 . <(poetry completions bash)
 
