@@ -26,7 +26,7 @@ alias rmf="rm -f"
 alias rmrf="rm -rf"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # pkg managers
-alias pur='paru'
-alias purr='paru -Rcns'
+alias pru='paru'
+alias prur='paru -Rcns'
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
