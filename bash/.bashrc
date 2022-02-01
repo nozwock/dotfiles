@@ -24,6 +24,17 @@ add_to_path() {
     fi
 }
 
+fman() {
+    man -k . | fzf -q \'"$1" --prompt='man> '  --preview $'echo {} | tr -d \'()\' | awk \'{printf "%s ", $2} {print $1}\' | xargs -r man | col -bx | bat -l man -p --color always' \
+        | tr -d '()' | awk '{printf "%s ", $2} {print $1}' | xargs -r man
+}
+# Get the colors in the opened man page itself
+export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
+
+fvim(){
+    loc=$(fzf --exact --preview="bat --color=always {}" --prompt="$EDITOR > " --bind K:preview-page-up,J:preview-page-down) && ${EDITOR:-vim} $loc
+}
+
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # "Importing" other scripts
@@ -46,7 +57,6 @@ bind '"\e[B":history-search-forward'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
 . <(poetry completions bash)
-
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
