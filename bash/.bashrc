@@ -6,8 +6,8 @@
 [[ $- != *i* ]] && return
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=999999
+HISTFILESIZE=999999
 
 [[ -z "$FUNCNEST" ]] && export FUNCNEST=100
 # limits recursive functions, see 'man bash'
