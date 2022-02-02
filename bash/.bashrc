@@ -97,6 +97,7 @@ fvim() {
 
 # "Importing" other scripts
 source_if_exists ~/.bash_aliases
+source_if_exists "$HOME/.cargo/env"
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # executable search path
@@ -104,7 +105,6 @@ add_to_path $HOME/.local/bin
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-. "$HOME/.cargo/env"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
 [ -f $HOME/.local/bin/poetry ] && . <(poetry completions bash)
