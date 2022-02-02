@@ -93,7 +93,6 @@ fvim() {
     fil="$(fd --type f -I -H --ignore-file /path/to/fvim.ignore/ | fzf --exact --preview="bat --color=always {}" --prompt="${EDITOR}> " --bind tab:preview-page-up,btab:preview-page-down -0)" && ${EDITOR} "${fil}" || return 1
 }
 
-
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 # "Importing" other scripts
@@ -108,7 +107,7 @@ add_to_path $HOME/.local/bin
 . "$HOME/.cargo/env"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
-. <(poetry completions bash)
+[ -f $HOME/.local/bin/poetry ] && . <(poetry completions bash)
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
