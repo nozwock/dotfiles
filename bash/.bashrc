@@ -9,6 +9,11 @@
 HISTSIZE=1000
 HISTFILESIZE=2000
 
+[[ -z "$FUNCNEST" ]] && export FUNCNEST=100
+# limits recursive functions, see 'man bash'
+
+export EDITOR=vim
+
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 source_if_exists() {
@@ -19,7 +24,7 @@ source_if_exists() {
 
 # if not exists already in PATH
 add_to_path() {
-    if [ -d "$1" ] ; then
+    if [[ -d "$1" ]] ; then
         [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
     fi
 }
@@ -31,9 +36,11 @@ fman() {
 # Get the colors in the opened man page itself
 export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
-fvim(){
-    loc=$(fzf --exact --preview="bat --color=always {}" --prompt="$EDITOR > " --bind K:preview-page-up,J:preview-page-down) && ${EDITOR:-vim} $loc
+fvim() {
+    local fil
+    fil="$(fd --type f -I -H --ignore-file /path/to/fvim.ignore/ | fzf --exact --preview="bat --color=always {}" --prompt="${EDITOR}> " --bind tab:preview-page-up,btab:preview-page-down -0)" && ${EDITOR} "${fil}" || return 1
 }
+
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
