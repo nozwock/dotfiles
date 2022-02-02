@@ -19,7 +19,7 @@ HISTFILESIZE=2000
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # XDG Base Directory Specification
 # http://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -33,10 +33,39 @@ export XDG_DOCUMENTS_DIR="$HOME/documents/"
 export XDG_MUSIC_DIR="$HOME/music/"
 export XDG_PICTURES_DIR="$HOME/pictures/"
 export XDG_VIDEOS_DIR="$HOME/videos/"
-# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-export EDITOR=vim
-
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# ENVIORNMENT variables
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export ARCHFLAGS="-arch x86_64"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LLC_COLLATE="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
+export LC_MONETARY="en_US.UTF-8"
+export LC_NUMERIC="en_US.UTF-8"
+export LC_TIME="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Add colors to the less and man commands.
+export LESS=-R
+export LESS_TERMCAP_ue="$(printf '%b' '[0m')"
+export LESS_TERMCAP_mb=$'\e[1;31mm'    # begin blinking
+export LESS_TERMCAP_md=$'\e[1;36m'     # begin bold
+export LESS_TERMCAP_us=$'\e[1;332m'    # begin underline
+export LESS_TERMCAP_so=$'\e[1;44;33m'  # begin standout-mode - info box
+export LESS_TERMCAP_me=$'\e[0m'        # end mode
+export LESS_TERMCAP_ue=$'\e[0m'        # end underline
+export LESS_TERMCAP_se=$'\e[0m'        # end standout-mode#
+### "$$$" as manpager
+# export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+# export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER='vim +Man!'
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+export PLAYER='mpv'
+export VISUAL=vim
+export EDITOR="$VISUAL"
+export FILE="${EDITOR}"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 source_if_exists() {
@@ -71,7 +100,7 @@ fvim() {
 source_if_exists ~/.bash_aliases
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+# executable search path
 add_to_path $HOME/.local/bin
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
