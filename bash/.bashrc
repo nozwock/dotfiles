@@ -90,7 +90,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --paging always'"
 
 fvim() {
     local fil
-    fil="$(fd --type f -I -H --ignore-file /path/to/fvim.ignore/ | fzf --exact --preview="bat --color=always {}" --prompt="${EDITOR}> " --bind tab:preview-page-up,btab:preview-page-down -0)" && ${EDITOR} "${fil}" || return 1
+    fil="$(fd --type f -I -H -E .git -E .npm -E node_modules | fzf --exact --preview="bat --color=always {}" --prompt="${EDITOR}> " --bind tab:preview-page-up,btab:preview-page-down -0)" && ${EDITOR} "${fil}" || return 1
 }
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
