@@ -1,5 +1,4 @@
-
-" syncine vim-plug
+" Plugins
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -7,12 +6,19 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
 endif
 
 call plug#begin()
+
+Plug 'ayu-theme/ayu-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'mhinz/vim-signify'
 Plug 'itchyny/lightline.vim'
-Plug 'ayu-theme/ayu-vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'vim-utils/vim-man'
+Plug 'ycm-core/YouCompleteMe'
+Plug 'mbbill/undotree'
+
 call plug#end()
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -44,6 +50,14 @@ set autoread
 
 set ttimeoutlen=50 " disable timeout on esc key
 set mouse+=a
+
+if executable('rg')
+    let g:rg_derive_root='true'
+endif
+
+let g:netrw_browse_split=2
+let g:netrw_banner=0
+let g:netrw_winsize=25
 
 " Searching
 nnoremap / /\v
