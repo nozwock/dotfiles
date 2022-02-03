@@ -33,6 +33,8 @@ set expandtab
 set ttimeoutlen=50 " disable timeout on esc key
 set mouse+=a
 
+let mapleader = ","
+
 " Searching
 nnoremap / /\v
 vnoremap / /\v
