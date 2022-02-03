@@ -9,7 +9,8 @@ endif
 call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
-Plug 'Raimondi/delimitMate'
+" Plug 'Raimondi/delimitMate'
+Plug 'mhinz/vim-signify'
 
 Plug 'airblade/vim-gitgutter'
 
@@ -29,7 +30,7 @@ set autoread
 set ts=4 sw=4 " render tab with 4 width
 set expandtab
 
-set ttimeoutlen=50
+set ttimeoutlen=50 " disable timeout on esc key
 set mouse+=a
 
 " Searching
