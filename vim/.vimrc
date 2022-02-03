@@ -16,6 +16,9 @@ Plug 'ayu-theme/ayu-vim'
 call plug#end()
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+" Settings
+let mapleader = "\<space>"
 syntax on
 
 set noerrorbells
@@ -42,8 +45,6 @@ set autoread
 set ttimeoutlen=50 " disable timeout on esc key
 set mouse+=a
 
-let mapleader = ","
-
 " Searching
 nnoremap / /\v
 vnoremap / /\v
@@ -52,7 +53,7 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
-map <leader><space> :let @/=''<cr> " clear search
+map <leader>, :let @/=''<cr> " clear search
 
 " Remap help key.
 inoremap <F1> <ESC>:set invfullscreen<CR>a
