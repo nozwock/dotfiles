@@ -7,7 +7,10 @@
 [db-shield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat&color=32a852&labelColor=1d212a
 [repo-size]: https://img.shields.io/github/repo-size/nozwock/dotfiles?style=flat&label=repo-size&color=blueviolet&labelColor=1d212a
 
-The dotfiles are optimal for **arch/arch-based** distros; & so they're not distro agnostic atm.
+The dotfiles are optimal for **arch/arch-based** distros; & so there might be some configs which aren't distro agnostic atm.
+
+## :desktop_computer: Required Programs
+- vim, starship, tmux, fzf, fd, ripgrep
 
 ## :fire: Usage
 
@@ -34,6 +37,3 @@ See [meta/configs/](./meta/configs) for available configurations
 
 _*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.
 *DO NOT* run the script as a sudoer.
-
-## :desktop_computer: Required Programs
-- vim, starship, tmux, fzf, fd, ripgrep
