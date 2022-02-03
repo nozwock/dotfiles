@@ -29,6 +29,7 @@ set autoread
 set ts=4 sw=4 " render tab with 4 width
 set expandtab
 
+set ttimeoutlen=50
 set mouse+=a
 
 " Searching
