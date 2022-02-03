@@ -11,24 +11,33 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'mhinz/vim-signify'
-
-" Plug 'airblade/vim-gitgutter'
-
 Plug 'itchyny/lightline.vim'
 Plug 'ayu-theme/ayu-vim'
-
 call plug#end()
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+syntax on
 
+set noerrorbells
 set number " Show line numbers
 set backspace=indent,eol,start " Makes backspace key more powerful
+set tabstop=4 softtabstop=4
+set shiftwidth=4 " render tab with 4 width
+set expandtab
+set smartindent
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
+set colorcolumn=88
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
 set showcmd " Show me what I'm typing
-set noshowmode " removes --INSERT--
+set noshowmode " removes --INSERT--, etc stuff
+" why? because we're using lightline
 set laststatus=2 " Status bar
 set autoread
-set ts=4 sw=4 " render tab with 4 width
-set expandtab
 
 set ttimeoutlen=50 " disable timeout on esc key
 set mouse+=a
@@ -59,14 +68,12 @@ set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
-set termguicolors
 
 " Color scheme (terminal)
 set t_ut="" " fix black lines at eof due to color scheme mismatch bw terminal and vim
 set t_Co=256
+set termguicolors
 set background=dark
 colorscheme ayu
 
