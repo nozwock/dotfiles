@@ -7,17 +7,35 @@ endif
 
 call plug#begin()
 
+" Styling
 Plug 'ayu-theme/ayu-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-signify'
+
+" yaya, imma sneaky snek
+Plug 'psf/black'
+
+" Snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'rafamadriz/friendly-snippets'
+
+Plug 'tpope/vim-rhubarb'
+Plug 'junegunn/gv.vim'
+" Plug 'tpope/vim-dispatch'
+Plug 'vim-autoformat/vim-autoformat'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
-Plug 'mhinz/vim-signify'
-Plug 'itchyny/lightline.vim'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-utils/vim-man'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
+
+" Langs color magic & stuff
+Plug 'rust-lang/rust.vim'
+Plug 'darrikonn/vim-gofmt'
+
 
 call plug#end()
 
