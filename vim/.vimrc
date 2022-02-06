@@ -62,7 +62,7 @@ let g:netrw_winsize=25
 " Searching
 nnoremap / /\v
 vnoremap / /\v
-set hlsearch
+set nohlsearch
 set incsearch
 set ignorecase
 set smartcase
