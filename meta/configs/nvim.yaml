@@ -1,0 +1,5 @@
+- link:
+    ~/.config/nvim/themes: nvim/.config/nvim/themes
+    ~/.config/nvim/init.vim: nvim/.config/nvim/init.vim
+    ~/.config/nvim/plugins.vim: nvim/.config/nvim/plugins.vim
+    ~/.config/nvim/settings.vim: nvim/.config/nvim/settings.vim
