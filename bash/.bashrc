@@ -63,9 +63,10 @@ export LESS_TERMCAP_se=$'\e[0m'        # end standout-mode#
 export MANPAGER='vim +Man!'
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 export PLAYER='mpv'
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 export FILE="${EDITOR}"
+export TERM=screen-256color # for tmux issues
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 source_if_exists() {
@@ -102,12 +103,17 @@ source_if_exists "$HOME/.cargo/env"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # executable search path
 add_to_path $HOME/.local/bin
+[ -d $HOME/.pyenv ] && add_to_path $HOME/.pyenv/bin
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 eval "$(starship init bash)"
+
+# python related tools
 [ -f $HOME/.local/bin/poetry ] && . <(poetry completions bash)
+[ -d $HOME/.pyenv ] && eval "$(pyenv virtualenv-init -)" \
+    && eval "$(pyenv init --path)" && eval "$(pyenv init -)"
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
