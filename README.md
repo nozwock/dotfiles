@@ -10,7 +10,7 @@
 The dotfiles are optimal for **arch/arch-based** distros; & so there might be some configs which aren't distro agnostic atm.
 
 ## :desktop_computer: Required Programs
-- vim, starship, tmux, fzf, fd, ripgrep
+- nvim, vim, starship, tmux, fzf, fd, ripgrep
 
 ## :fire: Usage
 
