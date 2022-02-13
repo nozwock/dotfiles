@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " themes
 " Plug 'morhetz/gruvbox'
 Plug 'gruvbox-community/gruvbox'
+Plug 'joshdick/onedark.vim'
 " statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
