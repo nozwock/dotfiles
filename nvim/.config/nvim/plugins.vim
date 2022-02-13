@@ -5,8 +5,12 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
+" themes
 " Plug 'morhetz/gruvbox'
 Plug 'gruvbox-community/gruvbox'
+" statusbar
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
