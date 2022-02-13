@@ -33,6 +33,7 @@ Plug 'ycm-core/YouCompleteMe'
 Plug 'mbbill/undotree'
 
 " Langs color magic & stuff
+Plug 'sheerun/vim-polyglot'
 Plug 'rust-lang/rust.vim'
 Plug 'darrikonn/vim-gofmt'
 
@@ -65,6 +66,7 @@ set noshowmode " removes --INSERT--, etc stuff
 " why? because we're using lightline
 set laststatus=2 " Status bar
 set autoread
+set nocompatible
 
 set ttimeoutlen=50 " disable timeout on esc key
 set mouse+=a
