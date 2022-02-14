@@ -9,6 +9,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 " Plug 'morhetz/gruvbox'
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
+Plug 'Shatur/neovim-ayu'
 " statusbar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

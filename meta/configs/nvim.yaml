@@ -3,3 +3,4 @@
     ~/.config/nvim/init.vim: nvim/.config/nvim/init.vim
     ~/.config/nvim/plugins.vim: nvim/.config/nvim/plugins.vim
     ~/.config/nvim/settings.vim: nvim/.config/nvim/settings.vim
+    ~/.config/nvim/remaps.vim: nvim/.config/nvim/remaps.vim
