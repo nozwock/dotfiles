@@ -41,3 +41,5 @@ set signcolumn=yes
 " delays and poor perf
 set updatetime=50
 
+" use sys clipboard
+set clipboard+=unnamedplus
