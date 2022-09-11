@@ -103,6 +103,7 @@ source_if_exists "$HOME/.cargo/env"
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # executable search path
 add_to_path $HOME/.local/bin
+add_to_path $HOME/.npm/bin
 [ -d $HOME/.pyenv ] && add_to_path $HOME/.pyenv/bin
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>

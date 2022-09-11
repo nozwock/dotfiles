@@ -42,4 +42,7 @@ set signcolumn=yes
 set updatetime=50
 
 " use sys clipboard
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
+
+" suda.vim
+let g:suda_smart_edit = 1

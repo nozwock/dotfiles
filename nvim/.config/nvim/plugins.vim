@@ -7,6 +7,7 @@ endif
 call plug#begin('~/.config/nvim/autoload/plugged')
 " themes
 " Plug 'morhetz/gruvbox'
+Plug 'lambdalisue/suda.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'joshdick/onedark.vim'
 Plug 'Shatur/neovim-ayu'
@@ -18,5 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-Plug 'norcalli/nvim-colorizer.lua'
+Plug 'psliwka/vim-smoothie'
+
+" Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
