@@ -1,0 +1,41 @@
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Changing "ls" to "exa"
+# stolen from @umgbhalla
+alias la='(exa -ahl --color=always --group-directories-first ) | bat ' # my preferred listing
+alias lr='(exa -R --color=always --group-directories-first) |bat '  # all files and dirs
+alias ll='(exa -al --color=always --group-directories-first) '  # all files and dirs
+alias ld='(exa -l --color=always --group-directories-first) | bat'  # long format
+alias lt='(exa -aT --color=always --group-directories-first)| bat' # tree listing
+alias l.='exa -a | egrep "^\." | bat'
+alias ls='exa --icons --color=always --group-directories-first'
+alias lcr='exa -lhFT --color=always --icons --sort=size --group-directories-first'
+alias g="grep"
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# programs
+alias b='bat'
+alias tmux='tmux -u' # i don know...emojis & some chars don't render otherwise
+alias code='codium'
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# confirm before removing something
+alias rm='rm -iv'
+alias rmf="rm -f"
+alias rmrf="rm -rf"
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# pkg managers
+alias parur='paru -Rcns'
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# Colorize grep output (good for log files)
+egrep() {
+    grep -E "$@" --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}
+}
+fgrep() {
+    grep -F "$@" --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}
+}
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# hashes
+alias md5='md5sum'
+alias s128='sha128sum'
+alias s256='sha256sum'
+alias s512='sha512sum'
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
