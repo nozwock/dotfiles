@@ -98,7 +98,7 @@ fvim() {
 
 # "Importing" other scripts
 source_if_exists ~/.bash_aliases
-source_if_exists "$HOME/.cargo/env"
+source_if_exists "$HOME/.cargo/env" # rustup installation
 
 # >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 # executable search path
