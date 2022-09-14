@@ -37,3 +37,7 @@ See [meta/configs/](./meta/configs) for available configurations
 
 _*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.
 *DO NOT* run the script as a sudoer.
+
+---
+#### Conventional Commits custom types :mega:
+`new, change, fix, docs`
