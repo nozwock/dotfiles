@@ -5,6 +5,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=9999999
 SAVEHIST=9999999
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
+export LANG=en_US.UTF-8
 setopt appendhistory
 setopt extended_history
 setopt hist_expire_dups_first
@@ -107,3 +108,7 @@ setopt COMPLETE_IN_WORD  # Complete from both ends of a word.
 unsetopt MENU_COMPLETE   # Do not autoselect the first completion entry.
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+add_to_path "$PNPM_HOME"
+# pnpm end
