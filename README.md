@@ -37,3 +37,8 @@ _*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of i
 ---
 #### Conventional Commits custom types \*-\*
 `new, change, fix, docs`
+
+---
+#### terminal tools I need/use
+- nvim, zsh, zellij
+- exa, fd, fzf, rg
