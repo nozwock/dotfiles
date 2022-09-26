@@ -19,7 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-Plug 'psliwka/vim-smoothie'
+" Plug 'psliwka/vim-smoothie'
 
 " Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
