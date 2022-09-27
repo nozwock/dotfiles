@@ -1,0 +1,2 @@
+require("nozwock")
+print("main")
