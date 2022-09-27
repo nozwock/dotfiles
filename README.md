@@ -1,5 +1,7 @@
 # Dotfiles
 
+*working on **new** neovim lua config in [`new-nvim-22`](https://github.com/nozwock/dotfiles/tree/new-nvim-22) branch (not merged)*
+
 [db-link]: https://github.com/anishathalye/dotbot
 [db-shield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat&color=32a852&labelColor=1d212a
 [repo-size]: https://img.shields.io/github/repo-size/nozwock/dotfiles?style=flat&label=repo-size&color=blueviolet&labelColor=1d212a
