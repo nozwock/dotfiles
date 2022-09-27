@@ -10,6 +10,12 @@ return require('packer').startup(function(use)
 
     -- Colorschemes
     use 'luisiacc/gruvbox-baby'
+    use("folke/tokyonight.nvim")
+
+    use({
+        'nvim-lualine/lualine.nvim',
+        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    })
 
     -- lsp
     use("neovim/nvim-lspconfig")
