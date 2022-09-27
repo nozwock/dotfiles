@@ -112,3 +112,8 @@ unsetopt MENU_COMPLETE   # Do not autoselect the first completion entry.
 export PNPM_HOME="$HOME/.local/share/pnpm"
 add_to_path "$PNPM_HOME"
 # pnpm end
+
+# zellij
+eval "$(zellij setup --generate-auto-start zsh)"
+# end
+
