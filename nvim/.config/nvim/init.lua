@@ -1,2 +1,1 @@
 require("nozwock")
-print("main")

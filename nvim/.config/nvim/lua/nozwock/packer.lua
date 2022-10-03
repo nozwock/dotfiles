@@ -40,4 +40,9 @@ return require('packer').startup(function(use)
         run = ":TSUpdate"
     })
     use("romgrk/nvim-treesitter-context")
+
+    use("simrat39/rust-tools.nvim")
+
+    -- Debugging
+    use("mfussenegger/nvim-dap")
 end)
