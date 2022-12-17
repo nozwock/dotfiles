@@ -45,4 +45,7 @@ return require('packer').startup(function(use)
 
     -- Debugging
     use("mfussenegger/nvim-dap")
+
+    -- games
+    use("ThePrimeagen/vim-be-good")
 end)

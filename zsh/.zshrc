@@ -117,3 +117,5 @@ add_to_path "$PNPM_HOME"
 eval "$(zellij setup --generate-auto-start zsh)"
 # end
 
+export GOPATH="$HOME/.local/share/go"
+
