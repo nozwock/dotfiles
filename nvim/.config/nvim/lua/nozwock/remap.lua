@@ -1,27 +1,29 @@
-local Remap = require("nozwock.keymap")
-local nnoremap = Remap.nnoremap
-local vnoremap = Remap.vnoremap
-local inoremap = Remap.inoremap
-local xnoremap = Remap.xnoremap
-local nmap = Remap.nmap
+vim.keymap.set("n", "<leader>ex", "<cmd>Ex<CR>") -- <CR> carriage return
 
-nnoremap("<leader>ex", "<cmd>Ex<CR>") -- <CR> carriage return
-nnoremap("<leader>u", ":UndotreeShow<CR>")
+-- move stuff in highlight mode (like in vscode)
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+-- keep the cursor in the middle while half page jumping
+vim.keymap.set("n", "<C-d>", "<C-d>zz")
+vim.keymap.set("n", "<C-u>", "<C-u>zz")
+
+-- keep the cursor in the middle while searching
+vim.keymap.set("n", "n", "nzzzv")
+vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
-xnoremap("<leader>P", "\"_dP")
-nnoremap("<leader>p", "\"+p")
-vnoremap("<leader>p", "\"+p")
+vim.keymap.set("x", "<leader>P", "\"_dP")
+vim.keymap.set("n", "<leader>p", "\"+p")
+vim.keymap.set("v", "<leader>p", "\"+p")
 
 -- next greatest remap ever : asbjornHaland
-nnoremap("<leader>y", "\"+y")
-vnoremap("<leader>y", "\"+y")
-nmap("<leader>Y", "\"+Y")
+vim.keymap.set("n", "<leader>y", "\"+y")
+vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set("n", "<leader>Y", "\"+Y", {noremap = false})
 
-nnoremap("<leader>d", "\"_d")
-vnoremap("<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", "\"_d")
+vim.keymap.set("v", "<leader>d", "\"_d")
 
-vnoremap("<leader>d", "\"_d")
-
-inoremap("<C-c>", "<Esc>")
+vim.keymap.set("i", "<C-c>", "<Esc>")
 
