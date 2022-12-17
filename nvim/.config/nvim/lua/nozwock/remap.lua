@@ -14,16 +14,13 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>P", "\"_dP")
-vim.keymap.set("n", "<leader>p", "\"+p")
-vim.keymap.set("v", "<leader>p", "\"+p")
+vim.keymap.set({"n", "v"}, "<leader>p", "\"+p")
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
+vim.keymap.set({"n", "v"}, "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y", {noremap = false})
 
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 
 vim.keymap.set("i", "<C-c>", "<Esc>")
 

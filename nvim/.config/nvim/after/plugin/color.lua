@@ -1,3 +1,5 @@
+vim.opt.termguicolors = true
+
 -- Enable transparent mode
 vim.g.gruvbox_baby_transparent_mode = 1
 vim.opt.background = "dark"

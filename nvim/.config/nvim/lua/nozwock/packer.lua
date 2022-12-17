@@ -7,24 +7,8 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use("wbthomason/packer.nvim")
-    use("sbdchd/neoformat")
 
-    -- FuzzyFinder *
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-    -- TreeSitter *
-    use("nvim-treesitter/nvim-treesitter", {
-        run = ":TSUpdate"
-    })
-    use("romgrk/nvim-treesitter-context")
-
-    use("mbbill/undotree")
-    use("tpope/vim-fugitive")
-
-    -- lsp
+    -- LSP Zero
     use {
         'VonHeikemen/lsp-zero.nvim',
         requires = {
@@ -47,22 +31,48 @@ return require('packer').startup(function(use)
         }
     }
 
-    -- use("nvim-lua/popup.nvim")
+    -- Highlight, edit, and navigate code
+    use("nvim-treesitter/nvim-treesitter", {
+        run = ":TSUpdate"
+    })
+    use("romgrk/nvim-treesitter-context")
+
+    -- Fuzzy Finder
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
+    -- Others
+    use("mbbill/undotree")
+    use {
+        'numToStr/Comment.nvim',
+        config = function()
+            require('Comment').setup()
+        end
+    }
+
+    -- Git related plugins
+    use("tpope/vim-fugitive")
+
+    -- Formatting
+    use("sbdchd/neoformat")
 
     -- Colorschemes
     use("luisiacc/gruvbox-baby")
     use("folke/tokyonight.nvim")
 
-    use({
+    use({ -- Fancier statusline
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
     })
 
-    -- use("simrat39/rust-tools.nvim")
+    -- Games
+    use("ThePrimeagen/vim-be-good")
 
     -- Debugging
     -- use("mfussenegger/nvim-dap")
 
-    -- games
-    use("ThePrimeagen/vim-be-good")
+    -- use("simrat39/rust-tools.nvim")
+    -- use("nvim-lua/popup.nvim")
 end)
