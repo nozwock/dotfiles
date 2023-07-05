@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 setopt autocd autopushd
 setopt nocaseglob
 
@@ -46,6 +53,42 @@ add_to_path() {
         [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
     fi
 }
+
+rand_string() {
+    ! [[ "$1" =~ '^[0-9]+$' ]] && return 1
+    echo -n "$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c $1)"
+}
+
+vera-mount() {
+    if [ -z "${1+x}" ]; then
+        echo "Error: No volume passed."
+        return 1
+    else
+        [ ! -f "$1" ] && echo "Error: No such volume found '$(readlink -f $1)'" && return 1
+        mount_dir="$(sudo mkdir -p /run/media/$USER/vera.$(rand_string 8))"
+        sudo veracrypt --text --mount "$1" "$mount_dir" || return 1
+        zenity --notification --text "Veracrypt\nContainer '$(basename $1)' successfully mounted"
+    fi
+}
+
+# can be improved
+vera-pop() {
+    sudo veracrypt -t --dismount --slot=1 || return 1
+    zenity --notification --text "Veracrypt\nSlot 1 dismounted"
+}
+
+killtree() {
+    local pid="$1"
+    local children=$(pgrep -P "$pid")
+
+    for child in $children; do
+        killtree "$child"
+    done
+
+    echo "kill $pid"
+    kill "$pid"
+}
+
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 add_to_path $HOME/.scripts/bin
@@ -112,10 +155,6 @@ unsetopt MENU_COMPLETE   # Do not autoselect the first completion entry.
 export PNPM_HOME="$HOME/.local/share/pnpm"
 add_to_path "$PNPM_HOME"
 # pnpm end
-
-# zellij
-eval "$(zellij setup --generate-auto-start zsh)"
-# end
 
 export GOPATH="$HOME/.local/share/go"
 
