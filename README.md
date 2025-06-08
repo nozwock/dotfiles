@@ -1,12 +1,10 @@
 # Dotfiles
 
-[db-link]: https://github.com/anishathalye/dotbot
-[db-shield]: https://img.shields.io/badge/powered%20by-dotbot-blue?style=flat&color=32a852&labelColor=1d212a
-[repo-size]: https://img.shields.io/github/repo-size/nozwock/dotfiles?style=flat&label=repo-size&color=blueviolet&labelColor=1d212a
+These dotfiles are for my Arch-based system, and so there might be some stuff which isn't distribution agnostic.
 
-The dotfiles are optimal for **arch/arch-based** distros; & so there might be some configs which aren't distro agnostic atm.
+Management of dotfiles is currently being done using [dotbot].
 
-*damnit I should just use stow huh?...*
+*I should just use stow huh?...*
 
 ## Usage
 
@@ -17,28 +15,33 @@ git clone https://github.com/nozwock/dotfiles.git .dotfiles --recursive
 cd .dotfiles
 ```
 
-### For installing a predefined profile:
+#### For installing a predefined profile
 
 ```bash
 ./install-profile <profile> [<configs...>]
 ```
 See [meta/profiles/](./meta/profiles) for available profiles
 
-### For installing single configurations:
+#### For installing individual configurations
 
 ```bash
 ./install-standalone <configs...>
 ```
 See [meta/configs/](./meta/configs) for available configurations
 
-_*Note:*_ Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.
-*DO NOT* run the script as a sudoer.
+> [!TIP]
+> Any configuration can be run as sudo by adding `-sudo` to the end of it when invoking the install script.\
+> *DO NOT* run the script directly with sudo.
 
 ---
-#### Conventional Commits custom types \*-\*
-`new, change, fix, docs`
 
----
-#### terminal tools I need/use
-- nvim, zsh, zellij
-- exa, fd, fzf, rg, delta, dust
+#### Tooling
+
+```
+nvim, zsh, zellij, exa, fd, fzf, rg, delta, dust
+```
+
+TODO: Maybe have a script to install my usual tooling.
+
+
+[dotbot]: https://github.com/anishathalye/dotbot
