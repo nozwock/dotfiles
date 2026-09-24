@@ -73,14 +73,6 @@ return require('packer').startup(function(use)
     -- Games
     use("ThePrimeagen/vim-be-good")
 
-    -- Comments
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
-
     -- Debugging
     -- use("mfussenegger/nvim-dap")
 
