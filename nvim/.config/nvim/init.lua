@@ -1,1 +1,1 @@
-require("nozwock")
+require("config")
