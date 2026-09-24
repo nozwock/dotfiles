@@ -1,4 +1,4 @@
 require("nozwock.set")
 require("nozwock.remap")
-require("nozwock.packer")
+require("nozwock.lazy")
 
