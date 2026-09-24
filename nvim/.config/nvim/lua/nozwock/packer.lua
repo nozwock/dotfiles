@@ -36,7 +36,8 @@ return require('packer').startup(function(use)
 
     -- Highlight, edit, and navigate code
     use("nvim-treesitter/nvim-treesitter", {
-        run = ":TSUpdate"
+        run = ":TSUpdate",
+        branch = 'main'
     })
     use("romgrk/nvim-treesitter-context")
 
