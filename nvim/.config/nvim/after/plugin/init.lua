@@ -1,5 +1,7 @@
 vim.cmd(":TSInstall all");
 
+require('typos').setup()
+
 -- local rt = require("rust-tools")
 
 -- rt.setup({

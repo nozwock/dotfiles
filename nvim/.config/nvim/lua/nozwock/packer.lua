@@ -31,6 +31,9 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- https://github.com/crate-ci/typos
+    use('poljar/typos.nvim')
+
     -- Highlight, edit, and navigate code
     use("nvim-treesitter/nvim-treesitter", {
         run = ":TSUpdate"
