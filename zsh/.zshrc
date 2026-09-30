@@ -181,3 +181,10 @@ export FZF_ALT_C_COMMAND='fd --hidden -td'
 export FZF_CTRL_T_COMMAND='fd --hidden -tf'
 source <(fzf --zsh)
 
+# Fuzzy Find Commands
+bins() {
+    print -z -- "$(echo -n "$PATH" | xargs -d ':' -I '{}' -- sh -c 'test -d "{}" && fd -d1 --follow -tx . "{}"' | xargs -- basename -a | fzf) "
+}
+zle -N fzf-bins bins
+bindkey '^e' fzf-bins # Ctrl+e
+
