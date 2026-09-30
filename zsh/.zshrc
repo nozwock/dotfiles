@@ -48,10 +48,18 @@ source_if_exists() {
 }
 
 # if not exists already in PATH
-add_to_path() {
-    if [[ -d "$1" ]] ; then
-        [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
-    fi
+path_append() {
+  local dir="$1"
+  if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
+    export PATH="${PATH:+$PATH:}${dir}"
+  fi
+}
+
+path_prepend() {
+  local dir="$1"
+  if [[ -d "$dir" ]] && [[ ":$PATH:" != *":$dir:"* ]]; then
+    export PATH="${dir}${PATH:+:$PATH}"
+  fi
 }
 
 rand_string() {
@@ -91,11 +99,11 @@ killtree() {
 
 
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-add_to_path $HOME/.scripts/bin
 source_if_exists $HOME/.zsh_aliases
-add_to_path $HOME/.local/bin
-add_to_path $HOME/.npm/bin
 source_if_exists "$HOME/.cargo/env"
+path_append $HOME/.scripts/bin
+path_append $HOME/.local/bin
+path_append $HOME/.npm/bin
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
@@ -153,8 +161,9 @@ unsetopt MENU_COMPLETE   # Do not autoselect the first completion entry.
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
-add_to_path "$PNPM_HOME"
+path_append "$PNPM_HOME"
 # pnpm end
 
 export GOPATH="$HOME/.local/share/go"
+path_append "$GOPATH/bin"
 
