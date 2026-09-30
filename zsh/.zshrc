@@ -141,10 +141,10 @@ zinit light-mode for \
     zdharma-continuum/fast-syntax-highlighting \
     djui/alias-tips \
     supercrabtree/k \
-    unixorn/fzf-zsh-plugin \
     zsh-users/zsh-completions
-                #zdharma-continuum/history-search-multi-word
-    #zsh-users/zsh-history-substring-search \
+    # unixorn/fzf-zsh-plugin \
+    # zdharma-continuum/history-search-multi-word \
+    # zsh-users/zsh-history-substring-search \
 
 # Load powerlevel10k theme
 zinit ice depth"1" # git clone depth
@@ -174,4 +174,10 @@ path_append "$PNPM_HOME"
 
 export GOPATH="$HOME/.local/share/go"
 path_append "$GOPATH/bin"
+
+# FZF
+export FZF_DEFAULT_OPTS='--layout=reverse --info=inline --height=80%'
+export FZF_ALT_C_COMMAND='fd --hidden -td'
+export FZF_CTRL_T_COMMAND='fd --hidden -tf'
+source <(fzf --zsh)
 
