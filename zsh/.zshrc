@@ -98,6 +98,14 @@ killtree() {
 }
 
 
+cd__() {
+  cd "$(printf "%0.s../" $(seq 1 $1 ))"
+}
+
+steamurl() {
+    steam "steam://openurl/$1"
+}
+
 #>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 source_if_exists $HOME/.zsh_aliases
 source_if_exists "$HOME/.cargo/env"
