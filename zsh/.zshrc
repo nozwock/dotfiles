@@ -190,3 +190,12 @@ bins() {
 zle -N fzf-bins bins
 bindkey '^e' fzf-bins # Ctrl+e
 
+# aykamko/tag
+# For letting you move to ripgrep matched lines
+if (( $+commands[tag] )); then
+  export TAG_SEARCH_PROG=rg  # replace with rg for ripgrep
+  export TAG_CMD_FMT_STRING='nvim -c "call cursor({{.LineNumber}}, {{.ColumnNumber}})" "{{.Filename}}"'
+  tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null }
+  alias rg=tag  # replace with rg for ripgrep
+fi
+
