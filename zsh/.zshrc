@@ -199,3 +199,8 @@ if (( $+commands[tag] )); then
   alias rg=tag  # replace with rg for ripgrep
 fi
 
+unset -f \
+    source_if_exists \
+    path_append \
+    path_prepend
+
