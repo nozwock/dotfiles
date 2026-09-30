@@ -67,7 +67,7 @@ rand_string() {
     echo -n "$(LC_ALL=C tr -dc 'A-Za-z0-9' </dev/urandom | head -c $1)"
 }
 
-vera-mount() {
+vera_mount() {
     if [ -z "${1+x}" ]; then
         echo "Error: No volume passed."
         return 1
@@ -80,7 +80,7 @@ vera-mount() {
 }
 
 # can be improved
-vera-pop() {
+vera_pop() {
     sudo veracrypt -t --dismount --slot=1 || return 1
     zenity --notification --text "Veracrypt\nSlot 1 dismounted"
 }
