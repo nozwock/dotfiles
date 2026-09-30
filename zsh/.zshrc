@@ -175,6 +175,8 @@ path_append "$PNPM_HOME"
 export GOPATH="$HOME/.local/share/go"
 path_append "$GOPATH/bin"
 
+path_append "$HOME/.dotnet/tools"
+
 # FZF
 export FZF_DEFAULT_OPTS='--layout=reverse --info=inline --height=80%'
 export FZF_ALT_C_COMMAND='fd --hidden -td'
